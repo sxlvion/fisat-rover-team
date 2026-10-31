@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mission Launch | DAWN – FISAT Rover Team</title>
+  <meta name="description" content="Mission Launch Portal for DAWN Rover, FISAT Rover Team.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+
+  <!-- Google Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between">
+  <!-- Scroll Reading Progress Bar -->
+  <div id="prog" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <nav id="nav">
+    <div class="brand-wrapper">
+      <a href="../../index.html" class="brand" aria-label="FISAT Rover Home">
+        <img src="../../images/logo.png" alt="DAWN Rover Logo" class="brand-logo">
+        <img src="../../images/FISAT_LOGO.png" alt="FISAT College Logo" class="brand-logo fisat">
+        <span>ROVER</span>
+      </a>
+    </div>
+
+    <ul>
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#teams">Subsystems</a></li>
+      <li><a href="../../irc.html">IRC 2026</a></li>
+      <li><a href="../../team.html">Team</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a class="btn btn-sm" href="../../index.html">Main Site</a>
+    </div>
+  </nav>
+
+  <!-- Launch Hero -->
+  <section id="top" class="band" style="min-height: 85vh; text-align: center; align-items: center; justify-content: center">
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <svg class="ground" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120 C200 70 330 140 560 100 S900 40 1120 90 1340 70 1440 100 V200 H0Z" fill="#1c0d07"/>
+      <path d="M0 160 C240 120 420 180 700 140 S1100 110 1440 150 V200 H0Z" fill="#000000"/>
+    </svg>
+
+    <span class="sub" style="margin-bottom: 12px">Unleash The Future</span>
+    <h1 id="h1" class="split-rise" style="font-size: clamp(64px, 14vw, 160px)">LAUNCH</h1>
+    <p style="font-size: 20px; color: var(--mute); max-width: 50ch; margin: 20px auto">
+      DAWN Mars Rover mission deployment sequence initiated. Ready for planetary operations at IRC 2026.
+    </p>
+
+    <div class="hero-actions" style="justify-content: center">
+      <a class="btn btn-primary" href="../../index.html">Enter Main Site &rarr;</a>
+      <a class="btn" href="../../irc.html">View IRC 2026 Logs</a>
+    </div>
+  </section>
+
+  <!-- Footer & Contact -->
+  <footer id="contact" style="padding-top: 32px">
+    <div class="copy" style="border: none; margin: 0">
+      <span>&copy; Copyright. Made and maintained by FISAT Rover Website Team.</span>
+      <a href="../../index.html" class="btn btn-sm" style="padding: 6px 14px">Back to Homepage &uarr;</a>
+    </div>
+  </footer>
+
+  <script src="../../js/dawn.js"></script>
+</body>
+</html>

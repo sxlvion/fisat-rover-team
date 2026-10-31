@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Meet The Team | DAWN – FISAT Rover Team</title>
+  <meta name="description" content="Meet the multidisciplinary student engineers, faculty advisors, mentors, and leadership of the FISAT Rover Team developing DAWN.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+
+  <!-- Google Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Scroll Reading Progress Bar -->
+  <div id="prog" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <nav id="nav">
+    <a href="index.html" class="brand" aria-label="FISAT Rover Home">ROVER</a>
+
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#teams">Subsystems</a></li>
+      <li><a href="irc.html">IRC 2026</a></li>
+      <li><a href="team.html" class="active">Team</a></li>
+      <li><a href="#patrons">Patrons</a></li>
+      <li><a href="#mentors">Mentors</a></li>
+      <li><a href="#members">Members</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a class="btn btn-sm" href="index.html">Home</a>
+      <button class="mobile-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section id="top" class="band" style="min-height: 70vh; padding-bottom: 64px">
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <svg class="ground" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120 C200 70 330 140 560 100 S900 40 1120 90 1340 70 1440 100 V200 H0Z" fill="#1c0d07"/>
+      <path d="M0 160 C240 120 420 180 700 140 S1100 110 1440 150 V200 H0Z" fill="#000000"/>
+    </svg>
+
+    <span class="sub">The Minds Behind DAWN</span>
+    <h1 id="h1" class="split-rise">Our Team</h1>
+    <p style="font-size: 20px; color: var(--mute); max-width: 60ch">
+      Many hands, one vision. A dedicated cohort of student engineers, researchers, faculty mentors, and institutional leadership pushing the frontier of planetary robotics.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#members">Explore Members</a>
+      <a class="btn" href="#patrons">Leadership &amp; Mentors</a>
+    </div>
+  </section>
+
+  <!-- Patrons Section -->
+  <section id="patrons" class="rule">
+    <span class="sub" style="color: var(--dust)">Visionary Leadership</span>
+    <h2>Our Patrons</h2>
+    <p style="margin-top: 16px">Guiding and inspiring our mission to excel on the global space engineering stage.</p>
+
+    <div class="grid g3" style="margin-top: 36px">
+      <!-- Patron 1 -->
+      <div class="team-member-card" data-category="patron leadership">
+        <div class="team-member-img-wrap">
+          <img src="images/team/shimithext.png" alt="Mr. Shimith P R" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Mr. Shimith P R</h3>
+            <p class="team-member-role">Chairman, FISAT</p>
+          </div>
+          <span class="team-member-tag">Patron</span>
+        </div>
+      </div>
+
+      <!-- Patron 2 -->
+      <div class="team-member-card" data-category="patron leadership">
+        <div class="team-member-img-wrap">
+          <img src="images/team/jacob.jpeg" alt="Dr. Jacob Thomas V" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Dr. Jacob Thomas V</h3>
+            <p class="team-member-role">Principal, FISAT</p>
+          </div>
+          <span class="team-member-tag">Patron</span>
+        </div>
+      </div>
+
+      <!-- Patron 3 -->
+      <div class="team-member-card" data-category="patron leadership">
+        <div class="team-member-img-wrap">
+          <img src="images/team/anil.jpeg" alt="Mr. Anil Johny" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Anil Johny</h3>
+            <p class="team-member-role">HOD – EIE Department</p>
+          </div>
+          <span class="team-member-tag">Patron</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentors Section -->
+  <section id="mentors" class="rule">
+    <span class="sub" style="color: var(--dust)">Technical Guidance</span>
+    <h2>Our Mentors</h2>
+    <p style="margin-top: 16px">Providing technical expertise, aerospace insights, and continuous architectural reviews.</p>
+
+    <div class="grid g4" style="margin-top: 36px">
+      <!-- Mentor 1 -->
+      <div class="team-member-card" data-category="mentor">
+        <div class="team-member-img-wrap">
+          <img src="images/team/harichand.jpeg" alt="Harichand Adithya" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Harichand Adithya</h3>
+            <p class="team-member-role">Technical Mentor</p>
+          </div>
+          <span class="team-member-tag">Mentor</span>
+        </div>
+      </div>
+
+      <!-- Mentor 2 -->
+      <div class="team-member-card" data-category="mentor">
+        <div class="team-member-img-wrap">
+          <img src="images/team/neal.jpeg" alt="Neal Titto" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Neal Titto</h3>
+            <p class="team-member-role">Technical Mentor</p>
+          </div>
+          <span class="team-member-tag">Mentor</span>
+        </div>
+      </div>
+
+      <!-- Mentor 3 -->
+      <div class="team-member-card" data-category="mentor">
+        <div class="team-member-img-wrap">
+          <img src="images/team/alenlong.png" alt="Alen Joseph" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Alen Joseph</h3>
+            <p class="team-member-role">Technical Mentor</p>
+          </div>
+          <span class="team-member-tag">Mentor</span>
+        </div>
+      </div>
+
+      <!-- Mentor 4 -->
+      <div class="team-member-card" data-category="mentor">
+        <div class="team-member-img-wrap">
+          <img src="images/team/sreevidhya.jpeg" alt="Dr. Sreevidya P" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Dr. Sreevidya P</h3>
+            <p class="team-member-role">Faculty Mentor, EIE Dept</p>
+          </div>
+          <span class="team-member-tag">Faculty Mentor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Members Section -->
+  <section id="members" class="rule">
+    <span class="sub" style="color: var(--dust)">Engineering Units</span>
+    <h2>Student Engineers &amp; Subsystems</h2>
+    <p style="margin-top: 16px">Filter by division to explore our interdisciplinary talent across robotics, electronics, and design.</p>
+
+    <!-- Filter Buttons -->
+    <div class="team-filter-bar">
+      <button class="team-filter-btn active" data-filter="all">All Members</button>
+      <button class="team-filter-btn" data-filter="lead">Team Lead</button>
+      <button class="team-filter-btn" data-filter="ai">AI &amp; Autonomy</button>
+      <button class="team-filter-btn" data-filter="control">Controls</button>
+      <button class="team-filter-btn" data-filter="electrical">Electrical</button>
+      <button class="team-filter-btn" data-filter="design">Design &amp; Mfg</button>
+      <button class="team-filter-btn" data-filter="science">Science &amp; Docs</button>
+    </div>
+
+    <!-- Members Grid -->
+    <div class="grid g4" style="margin-top: 24px">
+
+      <!-- 1. Hazim Karat (Lead) -->
+      <div class="team-member-card" data-category="lead ai control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Hazim_Karatjpg.jpg" alt="Hazim Karat" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Hazim Karat</h3>
+            <p class="team-member-role">Team Lead</p>
+          </div>
+          <span class="team-member-tag">Team Lead</span>
+        </div>
+      </div>
+
+      <!-- 2. Ann Maria Benny (Electrical) -->
+      <div class="team-member-card" data-category="electrical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Ann Maria - Ann Maria Benny.jpg" alt="Ann Maria Benny" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Ann Maria Benny</h3>
+            <p class="team-member-role">Electrical Subsystem</p>
+          </div>
+          <span class="team-member-tag">Electrical</span>
+        </div>
+      </div>
+
+      <!-- 3. Aneena Manohar V V (Electrical) -->
+      <div class="team-member-card" data-category="electrical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/AneenaManoharVV.jpg" alt="Aneena Manohar V V" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Aneena Manohar V V</h3>
+            <p class="team-member-role">Electrical Subsystem</p>
+          </div>
+          <span class="team-member-tag">Electrical</span>
+        </div>
+      </div>
+
+      <!-- 4. Shinto S Pomson (Design) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/shinto.jpg" alt="Shinto S Pomson" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Shinto S Pomson</h3>
+            <p class="team-member-role">Design Subsystem</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 5. Nibha Prasad (Design & Mfg) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Nibha Prasad.jpeg" alt="Nibha Prasad" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Nibha Prasad</h3>
+            <p class="team-member-role">Design &amp; Manufacturing</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 6. Nivin Prakash (Controls) -->
+      <div class="team-member-card" data-category="control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/nivin.jpg" alt="Nivin Prakash" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Nivin Prakash</h3>
+            <p class="team-member-role">Controls Subsystem</p>
+          </div>
+          <span class="team-member-tag">Controls</span>
+        </div>
+      </div>
+
+      <!-- 7. Devika Rajeev (Electrical) -->
+      <div class="team-member-card" data-category="electrical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Devika Rajeev.jpg" alt="Devika Rajeev" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Devika Rajeev</h3>
+            <p class="team-member-role">Electrical Subsystem</p>
+          </div>
+          <span class="team-member-tag">Electrical</span>
+        </div>
+      </div>
+
+      <!-- 8. Parvathy Shibu (Science) -->
+      <div class="team-member-card" data-category="science">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Parvathy Shibu.jpg" alt="Parvathy Shibu" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Parvathy Shibu</h3>
+            <p class="team-member-role">Science Subsystem</p>
+          </div>
+          <span class="team-member-tag">Science</span>
+        </div>
+      </div>
+
+      <!-- 9. Ajwad N (Design & Mfg) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Ajwad Ibn Nowshad.jpg" alt="Ajwad N" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Ajwad N</h3>
+            <p class="team-member-role">Design &amp; Manufacturing</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 10. Anirudh M (Controls) -->
+      <div class="team-member-card" data-category="control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Anirudh Madhu.jpg" alt="Anirudh M" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Anirudh M</h3>
+            <p class="team-member-role">Controls Subsystem</p>
+          </div>
+          <span class="team-member-tag">Controls</span>
+        </div>
+      </div>
+
+      <!-- 11. Parthip Aji (AI & Autonomy) -->
+      <div class="team-member-card" data-category="ai">
+        <div class="team-member-img-wrap">
+          <img src="images/team/parthipajii.jpg" alt="Parthip Aji" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Parthip Aji</h3>
+            <p class="team-member-role">AI &amp; Autonomy</p>
+          </div>
+          <span class="team-member-tag">AI &amp; Autonomy</span>
+        </div>
+      </div>
+
+      <!-- 12. Bhowmick Narayanan. K (AI & Autonomy) -->
+      <div class="team-member-card" data-category="ai">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Bhaumik Narayanan .k.jpg" alt="Bhowmick Narayanan. K" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Bhowmick Narayanan. K</h3>
+            <p class="team-member-role">AI &amp; Autonomy</p>
+          </div>
+          <span class="team-member-tag">AI &amp; Autonomy</span>
+        </div>
+      </div>
+
+      <!-- 13. Gopika M (Design & Mfg) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Gopika Manoj.jpg" alt="Gopika M" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Gopika M</h3>
+            <p class="team-member-role">Design &amp; Manufacturing</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 14. Vydhehy TM (Design & Mfg) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Devika RajeevVydehy.jpg" alt="Vydhehy TM" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Vydhehy TM</h3>
+            <p class="team-member-role">Design &amp; Manufacturing</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 15. S.S Sushobh (AI & Autonomy) -->
+      <div class="team-member-card" data-category="ai">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Sushobh Satheesh.jpg" alt="S.S Sushobh" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">S.S Sushobh</h3>
+            <p class="team-member-role">AI &amp; Autonomy</p>
+          </div>
+          <span class="team-member-tag">AI &amp; Autonomy</span>
+        </div>
+      </div>
+
+      <!-- 16. Fahad Yazin M P (Controls) -->
+      <div class="team-member-card" data-category="control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Fahad.jpg" alt="Fahad Yazin M P" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Fahad Yazin M P</h3>
+            <p class="team-member-role">Controls Subsystem</p>
+          </div>
+          <span class="team-member-tag">Controls</span>
+        </div>
+      </div>
+
+      <!-- 17. Leo Denny (Electrical) -->
+      <div class="team-member-card" data-category="electrical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Leo Denny.jpg" alt="Leo Denny" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Leo Denny</h3>
+            <p class="team-member-role">Electrical Subsystem</p>
+          </div>
+          <span class="team-member-tag">Electrical</span>
+        </div>
+      </div>
+
+      <!-- 18. Saniya Thankachan (Research & Docs) -->
+      <div class="team-member-card" data-category="science docs">
+        <div class="team-member-img-wrap">
+          <img src="images/team/SANIYA THANKACHAN.jpeg" alt="Saniya Thankachan" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Saniya Thankachan</h3>
+            <p class="team-member-role">Research &amp; Documentation</p>
+          </div>
+          <span class="team-member-tag">Research &amp; Docs</span>
+        </div>
+      </div>
+
+      <!-- 19. Fathima Nishida (Design & Mfg) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Fathima Nishida.png" alt="Fathima Nishida" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Fathima Nishida</h3>
+            <p class="team-member-role">Design &amp; Manufacturing</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 20. Adithyan V A (Electrical) -->
+      <div class="team-member-card" data-category="electrical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Adhithyan.jpg" alt="Adithyan V A" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Adithyan V A</h3>
+            <p class="team-member-role">Electrical Subsystem</p>
+          </div>
+          <span class="team-member-tag">Electrical</span>
+        </div>
+      </div>
+
+      <!-- 21. Govind Gopan (Design & Mfg) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Govind Gopan.jpg" alt="Govind Gopan" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Govind Gopan</h3>
+            <p class="team-member-role">Design &amp; Manufacturing</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 22. A B Navanika (Controls) -->
+      <div class="team-member-card" data-category="control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Navanika.jpg" alt="A B Navanika" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">A B Navanika</h3>
+            <p class="team-member-role">Controls Subsystem</p>
+          </div>
+          <span class="team-member-tag">Controls</span>
+        </div>
+      </div>
+
+      <!-- 23. Anjaly Krishna (Design & Mfg) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Anjaly Krishna.jpg" alt="Anjaly Krishna" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Anjaly Krishna</h3>
+            <p class="team-member-role">Design &amp; Manufacturing</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 24. Niranjan Jagadeesan Nair (Controls) -->
+      <div class="team-member-card" data-category="control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Niranjan JN.jpg" alt="Niranjan Jagadeesan Nair" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Niranjan Jagadeesan Nair</h3>
+            <p class="team-member-role">Controls Subsystem</p>
+          </div>
+          <span class="team-member-tag">Controls</span>
+        </div>
+      </div>
+
+      <!-- 25. Anerudh M K (AI & Autonomy) -->
+      <div class="team-member-card" data-category="ai">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Anerudh M K.png" alt="Anerudh M K" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Anerudh M K</h3>
+            <p class="team-member-role">AI &amp; Autonomy</p>
+          </div>
+          <span class="team-member-tag">AI &amp; Autonomy</span>
+        </div>
+      </div>
+
+      <!-- 26. Heera Henry (Science) -->
+      <div class="team-member-card" data-category="science">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Heera Henry.jpg" alt="Heera Henry" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Heera Henry</h3>
+            <p class="team-member-role">Science Subsystem</p>
+          </div>
+          <span class="team-member-tag">Science</span>
+        </div>
+      </div>
+
+      <!-- 27. Karthik M D (Controls) -->
+      <div class="team-member-card" data-category="control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Karthik.jpg" alt="Karthik M D" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Karthik M D</h3>
+            <p class="team-member-role">Controls Subsystem</p>
+          </div>
+          <span class="team-member-tag">Controls</span>
+        </div>
+      </div>
+
+      <!-- 28. Salvion Thomas (AI & Autonomy) -->
+      <div class="team-member-card" data-category="ai">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Salvion.jpg" alt="Salvion Thomas" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Salvion Thomas</h3>
+            <p class="team-member-role">AI &amp; Autonomy</p>
+          </div>
+          <span class="team-member-tag">AI &amp; Autonomy</span>
+        </div>
+      </div>
+
+      <!-- 29. Hareesh S Nair (AI & Autonomy) -->
+      <div class="team-member-card" data-category="ai">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Hareesh S Nair.jpg" alt="Hareesh S Nair" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Hareesh S Nair</h3>
+            <p class="team-member-role">AI &amp; Autonomy</p>
+          </div>
+          <span class="team-member-tag">AI &amp; Autonomy</span>
+        </div>
+      </div>
+
+      <!-- 30. Vinay Krishna P V (Electrical) -->
+      <div class="team-member-card" data-category="electrical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Vinay krishna Pv.jpg" alt="Vinay Krishna P V" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Vinay Krishna P V</h3>
+            <p class="team-member-role">Electrical Subsystem</p>
+          </div>
+          <span class="team-member-tag">Electrical</span>
+        </div>
+      </div>
+
+      <!-- 31. Dulfukkar Ali P B (Controls) -->
+      <div class="team-member-card" data-category="control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Dulfukkar Ali.jpg" alt="Dulfukkar Ali P B" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Dulfukkar Ali P B</h3>
+            <p class="team-member-role">Controls Subsystem</p>
+          </div>
+          <span class="team-member-tag">Controls</span>
+        </div>
+      </div>
+
+      <!-- 32. Emil K Manoj (Design & Mfg) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Emil.JPG" alt="Emil K Manoj" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Emil K Manoj</h3>
+            <p class="team-member-role">Design &amp; Manufacturing</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 33. Anurag E (Electrical) -->
+      <div class="team-member-card" data-category="electrical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Anurag E.jpg" alt="Anurag E" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Anurag E</h3>
+            <p class="team-member-role">Electrical Subsystem</p>
+          </div>
+          <span class="team-member-tag">Electrical</span>
+        </div>
+      </div>
+
+      <!-- 34. Farzeen Fathima N (Controls) -->
+      <div class="team-member-card" data-category="control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Farzeen Fathima N.jpg" alt="Farzeen Fathima N" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Farzeen Fathima N</h3>
+            <p class="team-member-role">Controls Subsystem</p>
+          </div>
+          <span class="team-member-tag">Controls</span>
+        </div>
+      </div>
+
+      <!-- 35. Aaron Varghese Jacoby (Electrical) -->
+      <div class="team-member-card" data-category="electrical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Aaron.jpeg" alt="Aaron Varghese Jacoby" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Aaron Varghese Jacoby</h3>
+            <p class="team-member-role">Electrical Subsystem</p>
+          </div>
+          <span class="team-member-tag">Electrical</span>
+        </div>
+      </div>
+
+      <!-- 36. Fathima Nishida T A (Design & Mfg) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Fathima Nishida.png" alt="Fathima Nishida T A" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Fathima Nishida T A</h3>
+            <p class="team-member-role">Design &amp; Manufacturing</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 37. Aysha Nourene (Design) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/Aysha Nourene.png" alt="Aysha Nourene" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Aysha Nourene</h3>
+            <p class="team-member-role">Design Subsystem</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 38. Nimil Nazeer (Design) -->
+      <div class="team-member-card" data-category="design mechanical">
+        <div class="team-member-img-wrap">
+          <img src="images/team/nimilnazeer.jpg" alt="Nimil Nazeer" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Nimil Nazeer</h3>
+            <p class="team-member-role">Design Subsystem</p>
+          </div>
+          <span class="team-member-tag">Design &amp; Mfg</span>
+        </div>
+      </div>
+
+      <!-- 39. Darwin Jose (Controls) -->
+      <div class="team-member-card" data-category="control">
+        <div class="team-member-img-wrap">
+          <img src="images/team/IMG_0516 (2).JPG" alt="Darwin Jose" loading="lazy">
+        </div>
+        <div class="team-member-info">
+          <div>
+            <h3 class="team-member-name">Darwin Jose</h3>
+            <p class="team-member-role">Controls Subsystem</p>
+          </div>
+          <span class="team-member-tag">Controls</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer & Contact -->
+  <footer id="contact">
+    <div>
+      <h3>Where to find us</h3>
+      <p>Federal Institute of Science and Technology (FISAT),<br>Hormis Nagar, Mookanoor.,<br>Ernakulam - 683 577, Kerala, India.</p>
+    </div>
+
+    <div>
+      <h3>Contact us</h3>
+      <p>
+        <a href="mailto:fisatroverteam@gmail.com">fisatroverteam@gmail.com</a><br>
+        <a href="https://www.instagram.com/fisatroverteam?igsh=MXcyYTNpZzNubWh0Mw==" target="_blank" rel="noopener">Instagram: @fisatroverteam</a>
+      </p>
+    </div>
+
+    <div>
+      <h3>Administration</h3>
+      <p>
+        <a href="index.html#contact">Back to Main Portal &rarr;</a>
+      </p>
+    </div>
+
+    <div class="copy">
+      <span>&copy; Copyright. Made and maintained by FISAT Rover Website Team.</span>
+      <a href="#top" class="btn btn-sm" style="padding: 6px 14px">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- Core Script -->
+  <script src="js/dawn.js"></script>
+</body>
+</html>

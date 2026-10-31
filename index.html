@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DAWN – FISAT Rover Team</title>
+  <meta name="description" content="Official website of the FISAT Rover Team and DAWN Mars Rover Prototype, competing at the International Rover Challenge (IRC) 2026.">
+  <meta name="author" content="FISAT Rover Website Team">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+
+  <!-- Google Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Scroll Reading Progress Bar -->
+  <div id="prog" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <nav id="nav">
+    <a href="#top" class="brand" aria-label="FISAT Rover Home">ROVER</a>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#teams">Subsystems</a></li>
+      <li><a href="irc.html">IRC 2026</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a class="btn btn-sm" href="team.html">Team</a>
+      <button class="mobile-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="top" class="band">
+    <!-- Video Background in the Landing Section -->
+    <video autoplay muted loop playsinline class="hero-video-bg" aria-hidden="true">
+      <source src="video/landing.mp4" type="video/mp4">
+    </video>
+
+    <!-- Mars Atmosphere & Tint Overlay on Top of the Video -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Starfield Interactive Canvas -->
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <!-- Mars Horizon Terrain Graphic -->
+    <svg class="ground" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120 C200 70 330 140 560 100 S900 40 1120 90 1340 70 1440 100 V200 H0Z" fill="#1c0d07"/>
+      <path d="M0 160 C240 120 420 180 700 140 S1100 110 1440 150 V200 H0Z" fill="#000000"/>
+    </svg>
+
+    <!-- Roving Rover Animation -->
+    <svg class="rv-rover" viewBox="0 0 150 80" aria-hidden="true">
+      <g fill="#e9d9cf">
+        <rect x="30" y="28" width="70" height="20" rx="3"/>
+        <rect x="62" y="12" width="6" height="16"/>
+        <circle cx="65" cy="10" r="5"/>
+        <path d="M100 34 L128 18 L140 24" stroke="#e9d9cf" stroke-width="4" fill="none"/>
+      </g>
+      <rect x="38" y="31" width="30" height="8" fill="#c8643c"/>
+      <g stroke="#e9d9cf" stroke-width="3" fill="#111">
+        <path d="M30 46 L22 62 M65 48 L65 62 M100 46 L108 62" fill="none"/>
+        <g class="wh"><circle cx="20" cy="66" r="11"/><path d="M20 56V76M10 66H30"/></g>
+        <g class="wh"><circle cx="65" cy="66" r="11"/><path d="M65 56V76M55 66H75"/></g>
+        <g class="wh"><circle cx="110" cy="66" r="11"/><path d="M110 56V76M100 66H120"/></g>
+      </g>
+    </svg>
+
+    <!-- Foreground Content as Overlay -->
+    <div class="hero-content">
+      <!-- Hero Logos -->
+      <div class="hero-logos">
+        <img src="images/logo.png" alt="DAWN Rover Logo" class="hero-logo-img dawn">
+        <img src="images/FISAT_LOGO.png" alt="FISAT College Logo" class="hero-logo-img fisat">
+      </div>
+
+      <span class="sub">Build for beyond</span>
+      <h1 id="h1" class="split-rise">FISAT Rover Team</h1>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#about">Scroll Down</a>
+        <a class="btn" href="irc.html">IRC 2026</a>
+        <a class="btn" href="https://www.instagram.com/fisatroverteam?igsh=MXcyYTNpZzNubWh0Mw==" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About us</h2>
+    <p style="margin-top: 32px">
+      DAWN is an advanced Mars rover prototype engineered by the FISAT Rover Team, a passionate collective of engineering students from the Federal Institute of Science and Technology (FISAT), Angamaly, Kerala. United by a strong enthusiasm for robotics and space technology, the team designs and builds innovative planetary exploration systems while proudly representing India at the International Rover Challenge, a premier global competition.
+    </p>
+
+    <div class="grid g2" style="margin-top: 48px">
+      <div class="ph" style="aspect-ratio: 16/10">
+        <img src="images/Robo/about1.jpeg" alt="DAWN Mars Rover Prototype" class="gallery-thumb" data-full="images/Robo/about1.jpeg">
+        <span>DAWN rover prototype</span>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center; gap: 20px">
+        <h2>Built differently</h2>
+        <p>
+          Engineered to operate in Mars-analogue environments, DAWN features an advanced suspension system, a multi-degree-of-freedom robotic arm for precise manipulation, and robust autonomous navigation. Built through strong interdisciplinary collaboration in mechanical, electronics, and software engineering, DAWN is designed to complete complex scientific and maintenance tasks, showcasing innovation and technical excellence.
+        </p>
+        <div>
+          <a class="btn btn-sm" href="irc.html">View IRC Mission Updates</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subsystems / Teams Section -->
+  <section class="rule" id="teams">
+    <h2>Our Subsystems</h2>
+    <p style="margin-top: 24px">Interdisciplinary engineering divisions collaborating to bring DAWN to life.</p>
+    <div class="grid g4 team">
+      <div class="team-card" data-team="AI and Autonomy">
+        <div class="team-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <div>
+          <h3>AI and Autonomy</h3>
+          <p style="font-size: 13px; color: var(--dim); margin-top: 8px">Vision-based navigation, waypoint SLAM, and autonomous path planning.</p>
+        </div>
+        <span class="more">Learn more &rarr;</span>
+      </div>
+
+      <div class="team-card" data-team="Electrical">
+        <div class="team-icon">
+          <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+        </div>
+        <div>
+          <h3>Electrical</h3>
+          <p style="font-size: 13px; color: var(--dim); margin-top: 8px">Dual 25.2V isolated power lines, custom BMS protection, and sensor telemetry.</p>
+        </div>
+        <span class="more">Learn more &rarr;</span>
+      </div>
+
+      <div class="team-card" data-team="Mechanical">
+        <div class="team-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg>
+        </div>
+        <div>
+          <h3>Mechanical</h3>
+          <p style="font-size: 13px; color: var(--dim); margin-top: 8px">Rocker-bogie chassis, compliant TPU wheels, and multi-DOF manipulator.</p>
+        </div>
+        <span class="more">Learn more &rarr;</span>
+      </div>
+
+      <div class="team-card" data-team="Control">
+        <div class="team-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <div>
+          <h3>Control</h3>
+          <p style="font-size: 13px; color: var(--dim); margin-top: 8px">NVIDIA Jetson computing, ESP32 PID motor controllers, and telemetry radios.</p>
+        </div>
+        <span class="more">Learn more &rarr;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <section class="rule" id="sponsors">
+    <h2>Sponsors</h2>
+    <p style="margin-top: 24px">We are proud to collaborate with forward-thinking industry leaders powering space technology.</p>
+
+    <p class="tier">Platinum sponsors</p>
+    <div class="grid g2 sp">
+      <a href="https://generaldatum.com" target="_blank" rel="noopener" class="sp-card">
+        <div class="sp-logo-wrap">
+          <img src="images/General-Datum-Header-Logo.png" alt="General Datum Logo" class="sp-logo">
+        </div>
+        <h3>General Datum</h3>
+        <p>Full-stack Engineering, Product Design &amp; Development company dealing with Defence, Aerospace &amp; Data center.</p>
+      </a>
+
+      <a href="https://mrad.co.in/" target="_blank" rel="noopener" class="sp-card">
+        <div class="sp-logo-wrap">
+          <img src="images/sponsor.png" alt="MRD Enterprises Logo" class="sp-logo">
+        </div>
+        <h3>MRD Enterprises</h3>
+        <p>Industry-grade support for performance-driven aerospace and robotics projects.</p>
+      </a>
+    </div>
+
+    <p class="tier">Gold sponsors</p>
+    <div class="grid g2 sp">
+      <a href="https://senseselec.com" target="_blank" rel="noopener" class="sp-card">
+        <div class="sp-logo-wrap">
+          <img src="images/spon.png" alt="Senses Electronics Logo" class="sp-logo">
+        </div>
+        <h3>Senses</h3>
+        <p>Smart technology, precision components, and reliable engineering tools.</p>
+      </a>
+    </div>
+
+    <p class="tier">Regular sponsors</p>
+    <div class="grid g2 sp">
+      <a href="https://fisat.ac.in" target="_blank" rel="noopener" class="sp-card">
+        <div class="sp-logo-wrap">
+          <img src="images/FISAT_LOGO.png" alt="FISAT Logo" class="sp-logo">
+        </div>
+        <h3>FISAT</h3>
+        <p>Federal Institute of Science and Technology, supporting student innovation, aerospace research, and academic excellence in engineering.</p>
+      </a>
+    </div>
+
+    <h2 style="margin-top: 96px">Why sponsor us?</h2>
+    <div class="grid g3 why">
+      <div>
+        <h3>NASA-grade visibility</h3>
+        <p>Reach a global community of roboticists and industry leaders from organizations like ISRO and The Mars Society.</p>
+      </div>
+      <div>
+        <h3>Regional prestige</h3>
+        <p>Align your brand with the elite technical talent putting Kerala on the global space-tech map.</p>
+      </div>
+      <div>
+        <h3>Top-tier achievement</h3>
+        <p>We are one of only three teams from Kerala to qualify for the International Rover Challenge (IRC) 2026 Finals.</p>
+      </div>
+      <div>
+        <h3>Global standard</h3>
+        <p>Our design cleared the System Design and Development Review (SDDR), proving it meets international aerospace engineering standards.</p>
+      </div>
+      <div>
+        <h3>The “Big Three”</h3>
+        <p>The IRC is a premier qualifying event for the World Rover League, standing alongside major competitions in the USA and Poland.</p>
+      </div>
+      <div>
+        <h3>R&amp;D Talent Pipeline</h3>
+        <p>Direct access to top engineering talent across robotics, embedded systems, computer vision, and autonomous systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="rule" id="achievements">
+    <h2>Achievements</h2>
+    <p style="margin-top: 24px">Innovative milestones and hardware systems engineered by FISAT Robotics Factory and Rover Team.</p>
+
+    <!-- Department Projects -->
+    <div class="grid g2 team" style="margin-top: 36px">
+      <a href="pages/events/minihack/index.html">
+        <span class="sub" style="color: var(--dust); font-size: 12px; margin-bottom: 8px">Department Innovation Project</span>
+        <h3>Surveillance Robocat</h3>
+        <p style="font-size: 14px; color: var(--dim); margin-top: 8px">A 4-legged robotic system engineered for security, autonomous obstacle evasion, and hazardous gas monitoring.</p>
+        <span class="more">EIE Dept &rarr;</span>
+      </a>
+
+      <a href="pages/events/technology-trends/index.html">
+        <span class="sub" style="color: var(--dust); font-size: 12px; margin-bottom: 8px">Biomedical Robotics Project</span>
+        <h3>Brain Controlled Assistive System</h3>
+        <p style="font-size: 14px; color: var(--dim); margin-top: 8px">Hands-free assistive platform enabling paralyzed individuals to control their environment through ocular telemetry.</p>
+        <span class="more">EIE Dept &rarr;</span>
+      </a>
+    </div>
+
+    <!-- Highlights Carousel -->
+    <h3 class="tier2">Jan – Jun 2026 highlights</h3>
+    <div class="ctl">
+      <button id="pv" aria-label="Previous Achievement">&larr;</button>
+      <button id="nx" aria-label="Next Achievement">&rarr;</button>
+    </div>
+
+    <div class="car" id="car">
+      <div class="ar">
+        <b>Finalist</b>
+        <div>
+          <h3>International Rover Challenge 2026</h3>
+          <small>MIT Manipal, Udupi &middot; 28 Jan – 2 Feb 2026 &middot; International</small>
+        </div>
+        <p>36 students from S4 and S6 EIE engineering DAWN Mars rover</p>
+      </div>
+
+      <div class="ar">
+        <b>Pre-finalist</b>
+        <div>
+          <h3>Airbus Fly Your Ideas</h3>
+          <small>One of 66 teams chosen from 350+ worldwide &middot; International</small>
+        </div>
+        <p>Karthik P K, Amal Anil, Ishan Manu, Gautham</p>
+      </div>
+
+      <div class="ar">
+        <b>Finalist</b>
+        <div>
+          <h3>Smart Earth Hackathon, Kazakhstan</h3>
+          <small>Global Space Exploration &middot; International</small>
+        </div>
+        <p>Salvion Thomas, Farzeen Fathima, Adhithyan K, Manal Nivil</p>
+      </div>
+
+      <div class="ar">
+        <b>1st place</b>
+        <div>
+          <h3>I-Act Udupi &middot; AI Metro Ticketing</h3>
+          <small>17 Mar 2026 &middot; National</small>
+        </div>
+        <p>Salvion Thomas, Agnes Joela Sam</p>
+      </div>
+
+      <div class="ar">
+        <b>1st place</b>
+        <div>
+          <h3>I-Act Udupi &middot; Design</h3>
+          <small>17 Mar 2026 &middot; National</small>
+        </div>
+        <p>Emil K Manoj</p>
+      </div>
+
+      <div class="ar">
+        <b>1st place</b>
+        <div>
+          <h3>KAU Youth Hackathon</h3>
+          <small>Kerala Agricultural University, Mannuthy &middot; 14 Feb 2026 &middot; State</small>
+        </div>
+        <p>Salvion Thomas, Nivin Prakash, Farzeen Fathima</p>
+      </div>
+
+      <div class="ar">
+        <b>2nd place</b>
+        <div>
+          <h3>AgriHack National Hackathon</h3>
+          <small>Jain University, Bangalore &middot; 4 Apr 2026 &middot; National</small>
+        </div>
+        <p>A P Nimil Nazeer, A B Navanika, Darwin T Jose, Muhammed Hisham T</p>
+      </div>
+
+      <div class="ar">
+        <b>2nd place</b>
+        <div>
+          <h3>I-Act Udupi &middot; Idea Pitching</h3>
+          <small>17 Mar 2026 &middot; National</small>
+        </div>
+        <p>Salvion Thomas</p>
+      </div>
+
+      <div class="ar">
+        <b>Runner-up</b>
+        <div>
+          <h3>I-Act Udupi &middot; Idea Pitching</h3>
+          <small>17 Mar 2026 &middot; National</small>
+        </div>
+        <p>Shinto S Pomson</p>
+      </div>
+
+      <div class="ar">
+        <b>Runner-up</b>
+        <div>
+          <h3>I-Act Udupi &middot; Speed CAD</h3>
+          <small>17 Mar 2026 &middot; National</small>
+        </div>
+        <p>Karthik P K</p>
+      </div>
+
+      <div class="ar">
+        <b>4th place</b>
+        <div>
+          <h3>PSG B-Summit</h3>
+          <small>National Business &amp; Engineering Summit</small>
+        </div>
+        <p>Salvion Thomas, Agnes Joela Sam, Manal Nivil Ali (Special Mention)</p>
+      </div>
+
+      <div class="ar">
+        <b>2nd place</b>
+        <div>
+          <h3>Navodaya Idea Pitch</h3>
+          <small>Chinmaya Vishwavidyapeeth &middot; 19 Feb 2026</small>
+        </div>
+        <p>Adithyan, Manal</p>
+      </div>
+
+      <div class="ar">
+        <b>2nd prize</b>
+        <div>
+          <h3>Line Following Robot</h3>
+          <small>Viswa Jyothi College</small>
+        </div>
+        <p>Ibrahim K, Amaan Shakeer, Amir Shihab, Aneena Manohar, Nourin Shanavas, Izza</p>
+      </div>
+
+      <div class="ar">
+        <b>3rd prize</b>
+        <div>
+          <h3>Line Following Robot</h3>
+          <small>MBITS Autonomous Robotics</small>
+        </div>
+        <p>Ibrahim K, Amaan Shakeer, Amir Shihab, Aneena Manohar, Nourin Shanavas, Izza</p>
+      </div>
+
+      <div class="ar">
+        <b>3rd place</b>
+        <div>
+          <h3>Line Following Robot</h3>
+          <small>Rajagiri School of Engineering and Technology &middot; 14 Oct 2025</small>
+        </div>
+        <p>A B Navanika, Farzeen Fathima N, Ashkal Ahammed, Ameen Ahammed</p>
+      </div>
+
+      <div class="ar">
+        <b>Finalist</b>
+        <div>
+          <h3>Ideathon</h3>
+          <small>St Teresa's College</small>
+        </div>
+        <p>A B Navanika, Ann Maria Benny</p>
+      </div>
+    </div>
+
+    <!-- Participation List -->
+    <h3 class="tier2">Participation &amp; Research</h3>
+    <div class="alist">
+      <div class="ar pr">
+        <b></b>
+        <div><h3>ISTE Paper Presentation &middot; 16–17 Apr 2026</h3></div>
+        <p>10 technical papers presented at a national conference organized by ISTE</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>Mini Project Expo, FISAT &middot; 25 Mar 2026</h3></div>
+        <p>50+ students from S6 EIE showcasing engineering prototypes</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>I-Act’26, MIT Manipal &middot; 16–17 Mar 2026</h3></div>
+        <p>Idea pitching and robotic systems demonstrations</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>I-Act Udupi, Bangalore and Metro Ticketing events</h3></div>
+        <p>Salvion Thomas, Parthip Aji, Shinto S Pomson, Karthik M D and others</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>I-Act’25, REVA University, Bangalore &middot; 15–16 Mar 2025</h3></div>
+        <p>Dulfukker Ali, Hareesh S Nair, Karthik M D, Fahad Yasin, Emil Manoj</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>Jabagadadash 6.0, Chinmaya Vishwavidyapeeth &middot; 19–21 Feb 2026</h3></div>
+        <p>International inter-university fest technical participation</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>Vajra Hackathon, MA College Kothamangalam &middot; 21 Feb 2026</h3></div>
+        <p>National-level competitive hackathon entry</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>Codex Hackathon by ISTE &middot; Feb 2026</h3></div>
+        <p>Saniya Thankachan</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>ASME EFx26 IAM3D &amp; ASME IAM 3D Model, SJCET Palai &middot; 27–28 Feb 2026</h3></div>
+        <p>National-level mechanical modeling competitions</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>Pradharshani Project Expo &middot; 19–21 Feb 2026</h3></div>
+        <p>Hazim Karat, Hareesh S Nair</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>Srishti’26, Saintgits, Kottayam &middot; 23–24 Feb 2026</h3></div>
+        <p>Dulfukker Ali, Anirudh M, Fahad Yasin</p>
+      </div>
+
+      <div class="ar pr">
+        <b></b>
+        <div><h3>Line Following Robot Competitions, Viswa Jyothi &amp; Ekalakshya</h3></div>
+        <p>Autonomous bot racing participation by S4 engineering students</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Callout Banner -->
+  <section class="rule band" style="min-height: 60vh; align-items: flex-start; justify-content: center">
+    <span class="sub" style="color: var(--dust)">Behind the Mission</span>
+    <h2>Our team</h2>
+    <p style="font-size: 20px; color: var(--mute)">Many hands, one vision — brought to life through teamwork.</p>
+    <a class="btn btn-primary" href="team.html">Meet our team &rarr;</a>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="rule">
+    <h2>Gallery</h2>
+    <p style="margin-top: 16px">Field testing, rover development sessions, and competition arena captures.</p>
+    <div class="marq">
+      <div class="mt">
+        <div class="ph"><img src="images/Robo/gal1.jpeg" alt="DAWN Rover Arena Testing" class="gallery-thumb" data-full="images/Robo/gal1.jpeg"><span>Field Run 1</span></div>
+        <div class="ph"><img src="images/Robo/gal2.jpeg" alt="Rover Mechanical Suspension" class="gallery-thumb" data-full="images/Robo/gal2.jpeg"><span>Mechanics &amp; Wheels</span></div>
+        <div class="ph"><img src="images/Robo/about1.jpeg" alt="DAWN Rover Full Assembly" class="gallery-thumb" data-full="images/Robo/about1.jpeg"><span>Full Prototype</span></div>
+        <div class="ph"><img src="images/Robo/p1.JPG.jpeg" alt="IRC Manipal Setup" class="gallery-thumb" data-full="images/Robo/p1.JPG.jpeg"><span>IRC Manipal</span></div>
+        <div class="ph"><img src="images/Robo/p2 (2)_20260130_222343.jpg" alt="Rover Night Run" class="gallery-thumb" data-full="images/Robo/p2 (2)_20260130_222343.jpg"><span>Night Run</span></div>
+
+        <!-- Repeated loop for infinite marquee -->
+        <div class="ph"><img src="images/Robo/gal1.jpeg" alt="DAWN Rover Arena Testing" class="gallery-thumb" data-full="images/Robo/gal1.jpeg"><span>Field Run 1</span></div>
+        <div class="ph"><img src="images/Robo/gal2.jpeg" alt="Rover Mechanical Suspension" class="gallery-thumb" data-full="images/Robo/gal2.jpeg"><span>Mechanics &amp; Wheels</span></div>
+        <div class="ph"><img src="images/Robo/about1.jpeg" alt="DAWN Rover Full Assembly" class="gallery-thumb" data-full="images/Robo/about1.jpeg"><span>Full Prototype</span></div>
+        <div class="ph"><img src="images/Robo/p1.JPG.jpeg" alt="IRC Manipal Setup" class="gallery-thumb" data-full="images/Robo/p1.JPG.jpeg"><span>IRC Manipal</span></div>
+        <div class="ph"><img src="images/Robo/p2 (2)_20260130_222343.jpg" alt="Rover Night Run" class="gallery-thumb" data-full="images/Robo/p2 (2)_20260130_222343.jpg"><span>Night Run</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer & Contact -->
+  <footer id="contact">
+    <div>
+      <h3>Where to find us</h3>
+      <p>Federal Institute of Science and Technology (FISAT),<br>Hormis Nagar, Mookanoor.,<br>Ernakulam - 683 577, Kerala, India.</p>
+    </div>
+
+    <div>
+      <h3>Contact us</h3>
+      <p>
+        <a href="mailto:fisatroverteam@gmail.com">fisatroverteam@gmail.com</a><br>
+        <a href="https://www.instagram.com/fisatroverteam?igsh=MXcyYTNpZzNubWh0Mw==" target="_blank" rel="noopener">Instagram: @fisatroverteam</a>
+      </p>
+    </div>
+
+    <div>
+      <h3>Administration</h3>
+      <p>
+        <a href="#admin" class="admin-btn-trigger">Admin portal login &rarr;</a>
+      </p>
+    </div>
+
+    <div class="copy">
+      <span>&copy; Copyright. Made and maintained by FISAT Rover Website Team.</span>
+      <a href="#top" class="btn btn-sm" style="padding: 6px 14px">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- Subsystem Modal -->
+  <div class="modal-backdrop" id="teamModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" id="closeTeamModal" aria-label="Close dialog">&times;</button>
+      <h3 class="modal-title" id="teamModalTitle">Subsystem Overview</h3>
+      <p class="modal-content-text" id="teamModalDesc"></p>
+      <div class="modal-actions">
+        <a href="team.html" class="btn btn-primary">Meet the Team Members</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Login Modal -->
+  <div class="modal-backdrop" id="adminModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" id="closeAdminModal" aria-label="Close dialog">&times;</button>
+      <h3 class="modal-title">Admin Login</h3>
+      <p class="modal-content-text">Access credentials required for administrative dashboard operations.</p>
+      <form onsubmit="event.preventDefault(); alert('Authentication system connected to FISAT local network.');">
+        <div class="form-group">
+          <label for="adminUser">Username</label>
+          <input type="text" id="adminUser" class="form-input" placeholder="Admin username" required>
+        </div>
+        <div class="form-group">
+          <label for="adminPass">Password</label>
+          <input type="password" id="adminPass" class="form-input" placeholder="Password" required>
+        </div>
+        <div class="modal-actions" style="margin-top: 24px">
+          <button type="submit" class="btn btn-primary" style="width: 100%">Authenticate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Gallery Lightbox Modal -->
+  <div class="modal-backdrop" id="lightboxModal" role="dialog" aria-modal="true">
+    <div class="modal-box lightbox-box">
+      <button class="modal-close" id="closeLightbox" aria-label="Close lightbox">&times;</button>
+      <img src="" alt="Expanded View" id="lightboxImg" class="lightbox-img">
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="js/dawn.js"></script>
+</body>
+</html>

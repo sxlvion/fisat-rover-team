@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Brain Controlled Assistive System | FISAT Robotics Factory</title>
+  <meta name="description" content="Brain Controlled Assistive System: Biomedical robotics project engineered by EIE Department, FISAT.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../images/favicon-16x16.png">
+
+  <!-- Google Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/styles.css">
+</head>
+<body>
+  <!-- Scroll Reading Progress Bar -->
+  <div id="prog" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <nav id="nav">
+    <a href="../../../index.html" class="brand" aria-label="FISAT Rover Home">ROVER</a>
+
+    <ul>
+      <li><a href="../../../index.html#about">About</a></li>
+      <li><a href="../../../index.html#teams">Subsystems</a></li>
+      <li><a href="../../../irc.html">IRC 2026</a></li>
+      <li><a href="../../../team.html">Team</a></li>
+      <li><a href="../../../index.html#achievements" class="active">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a class="btn btn-sm" href="../../../index.html">Main Site</a>
+      <button class="mobile-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="top" class="band" style="min-height: 70vh; padding-bottom: 64px">
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <svg class="ground" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120 C200 70 330 140 560 100 S900 40 1120 90 1340 70 1440 100 V200 H0Z" fill="#1c0d07"/>
+      <path d="M0 160 C240 120 420 180 700 140 S1100 110 1440 150 V200 H0Z" fill="#000000"/>
+    </svg>
+
+    <span class="sub">Biomedical Engineering &middot; EIE Department</span>
+    <h1 id="h1" class="split-rise">Brain Controlled System</h1>
+    <p style="font-size: 20px; color: var(--mute); max-width: 60ch">
+      An advanced neural and ocular assistive interface granting mobility, comfort control, and real-time vital telemonitoring to paralyzed patients.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#details">Technical Overview</a>
+      <a class="btn" href="../../../index.html#achievements">&larr; Back to Achievements</a>
+    </div>
+  </section>
+
+  <!-- Details Section -->
+  <section id="details">
+    <div class="grid g2" style="align-items: center; margin-top: 0">
+      <div class="ph" style="aspect-ratio: 4/3; border-radius: 6px; overflow: hidden">
+        <img src="./images/brain.webp" alt="Brain Controlled Assistive System" style="width: 100%; height: 100%; object-fit: cover">
+        <span>Biomedical Interface</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <span class="sub" style="color: var(--dust)">Clinical Impact</span>
+        <h2>Assistive Technology</h2>
+        <p>
+          Designed for patients suffering from severe motor impairment or locked-in syndromes, this technology provides a vital lifeline. By translating ocular and electrophysiological signals into actionable automation routines, it restores autonomy and peace of mind for patients and their families.
+        </p>
+        <div>
+          <a href="../../../index.html#achievements" class="btn btn-sm">Explore More Achievements</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Features Grid -->
+    <h2 style="margin-top: 80px">Core System Capabilities</h2>
+    <div class="grid g2" style="margin-top: 36px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span class="sub" style="color: var(--dust); font-size: 13px">Ocular Control</span>
+        <h3>Hands-Free Environmental Control</h3>
+        <p>
+          Patients can independently adjust automated hospital bed inclines for comfort and operate household appliances such as lighting, fans, and televisions using subtle, intuitive eye movements and blinks.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span class="sub" style="color: var(--dust); font-size: 13px">Telemetry &amp; Telehealth</span>
+        <h3>Continuous Safety Monitoring</h3>
+        <p>
+          Continuously monitors patient heart rate and vitals. Upon detecting anomalous biometric readings or distress thresholds, the system automatically triggers an emergency SMS notification to caregivers and doctors.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span class="sub" style="color: var(--dust); font-size: 13px">Feedback Loop</span>
+        <h3>Auditory Voice Confirmation</h3>
+        <p>
+          Equipped with an integrated speech synthesizer that verbally confirms command reception in real time, preventing accidental activations and giving users clear acoustic feedback.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span class="sub" style="color: var(--dust); font-size: 13px">Emergency Response</span>
+        <h3>Instant Distress Beacon</h3>
+        <p>
+          A quick series of intentional ocular blinks activates an immediate priority alert dispatch to designated guardians, ensuring critical help is reachable without physical exertion.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer & Contact -->
+  <footer id="contact">
+    <div>
+      <h3>Where to find us</h3>
+      <p>Federal Institute of Science and Technology (FISAT),<br>Hormis Nagar, Mookanoor.,<br>Ernakulam - 683 577, Kerala, India.</p>
+    </div>
+
+    <div>
+      <h3>Contact us</h3>
+      <p>
+        <a href="mailto:fisatroverteam@gmail.com">fisatroverteam@gmail.com</a><br>
+        <a href="https://www.instagram.com/fisatroverteam?igsh=MXcyYTNpZzNubWh0Mw==" target="_blank" rel="noopener">Instagram: @fisatroverteam</a>
+      </p>
+    </div>
+
+    <div>
+      <h3>Administration</h3>
+      <p>
+        <a href="../../../index.html#contact">Back to Rover Portal &rarr;</a>
+      </p>
+    </div>
+
+    <div class="copy">
+      <span>&copy; Copyright. Made and maintained by FISAT Rover &amp; EIE Website Team.</span>
+      <a href="#top" class="btn btn-sm" style="padding: 6px 14px">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- Core Script -->
+  <script src="../../../js/dawn.js"></script>
+</body>
+</html>

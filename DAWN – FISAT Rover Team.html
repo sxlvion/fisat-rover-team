@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DAWN – FISAT Rover Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--soft:#0a0a0a;--fg:#fff;--mute:#f0f0fa;--dim:#9a9aa3;--line:#3a3a3f;--dust:#c8643c;
+--disp:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--body:"Barlow",Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:80px}html,body{overflow-x:clip;max-width:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.7 var(--body);letter-spacing:.02em}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+h1,h2,h3{font-family:var(--disp);font-weight:700;text-transform:uppercase;margin:0;line-height:1}
+h1{font-size:clamp(56px,12vw,150px);letter-spacing:.03em}
+h2{font-size:clamp(36px,6vw,64px);letter-spacing:.03em}
+h3{font-size:28px;letter-spacing:.05em}
+p{margin:0;max-width:62ch;color:var(--mute)}
+nav{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:calc(18px + env(safe-area-inset-top,0px)) 32px 18px;background:linear-gradient(#000c,#0000)}
+.brand{font:700 20px var(--disp);letter-spacing:.2em}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font:700 13px var(--body);letter-spacing:.09em;text-transform:uppercase}
+nav a:hover{color:var(--dust)}
+.btn{display:inline-block;border:1px solid #fff;border-radius:32px;padding:16px 26px;font:700 13px/1 var(--body);letter-spacing:.09em;text-transform:uppercase;transition:background .2s,color .2s}
+.btn:hover{background:#fff;color:#000}
+section{padding:120px 32px;max-width:1280px;margin:0 auto}
+.band{min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:28px}
+#top{max-width:none;position:relative;overflow:hidden;justify-content:flex-end;padding-bottom:96px;
+background:radial-gradient(120% 60% at 70% 100%,#7a3a22 0%,#2b130b 40%,#000 75%),linear-gradient(#000,#050302)}
+#top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(transparent,#000);pointer-events:none}
+#top>*{position:relative;z-index:2}#top>canvas,#top>.ground,#top>.rv-rover{position:absolute}#top>.ground{z-index:1}
+#top .sub{font:500 14px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.rule{border-top:1px solid var(--line)}
+.grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+.grid>*{background:var(--bg);padding:36px 28px}
+.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.team a{display:block;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;transition:background .2s}
+.team a:hover{background:var(--soft)}
+.more{font:700 12px var(--body);letter-spacing:.12em;color:var(--dim)}
+.sp h3{margin-bottom:10px}.sp p{font-size:15px;color:var(--dim)}
+.tier{margin:56px 0 0;font:700 14px var(--body);letter-spacing:.15em;text-transform:uppercase;color:var(--dust)}
+.why>*{display:block}.why h3{font-size:24px;margin-bottom:12px}
+.ph{aspect-ratio:4/3;background:linear-gradient(135deg,#1a0d08,#4a2415 55%,#120907);position:relative;padding:0}
+.ph:nth-child(even){background:linear-gradient(200deg,#0d0d10,#3a1c11 60%,#0a0504)}
+.ph span{position:absolute;left:16px;bottom:12px;font:700 12px var(--body);letter-spacing:.12em;color:var(--dim)}
+
+.tier2{margin:64px 0 0;font:700 22px var(--disp);letter-spacing:.1em;color:var(--dust)}
+.alist{border-top:1px solid var(--line);margin-top:16px}
+.ar{display:grid;grid-template-columns:200px 1.2fr 1.4fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.ar b{font:700 20px var(--disp);letter-spacing:.06em;text-transform:uppercase}
+.ar h3{font-size:24px}.ar small{display:block;margin-top:6px;color:var(--dim);font-size:14px}
+.ar p{font-size:14px;color:var(--dim)}.ar.pr{grid-template-columns:0 1.2fr 1.4fr}
+@media(max-width:860px){.ar,.ar.pr{grid-template-columns:1fr;gap:8px}}
+
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--dust);z-index:20}
+nav.sc{background:#000d;backdrop-filter:blur(10px)}
+#stars{position:absolute;inset:0;width:100%;height:100%}
+.ground{position:absolute;left:0;right:0;bottom:0;height:200px;width:100%;z-index:0}
+.rv-rover{position:absolute;bottom:34px;left:0;width:150px;z-index:1;animation:drive 32s linear infinite}
+@keyframes drive{from{transform:translateX(-200px)}to{transform:translateX(110vw)}}
+.wh{transform-box:fill-box;transform-origin:center;animation:spin 1.4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ch{display:inline-block}
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.stats div{background:#000;padding:56px 24px;text-align:center}
+.stats b{display:block;font:700 clamp(56px,8vw,104px)/1 var(--disp);color:var(--fg)}
+.stats span{color:var(--dim);font-size:14px;display:block;margin-top:10px}
+.ctl{display:flex;gap:12px;margin-top:28px}
+.ctl button{width:52px;height:52px;border-radius:50%;border:1px solid #fff;background:none;color:#fff;font-size:20px;cursor:pointer;transition:.2s}
+.ctl button:hover{background:#fff;color:#000}
+.car{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 0 28px;margin-top:16px;scrollbar-width:thin;scrollbar-color:var(--line) transparent;cursor:grab}
+.car.drag{cursor:grabbing;scroll-snap-type:none}
+.car .ar{display:flex;flex-direction:column;justify-content:space-between;gap:24px;flex:0 0 min(340px,82vw);min-height:340px;scroll-snap-align:start;border:1px solid var(--line);padding:28px;background:linear-gradient(160deg,#0f0f12,#000);transition:transform .35s,border-color .35s}
+.car .ar:hover{transform:translateY(-8px);border-color:var(--dust)}
+.car .ar b{color:var(--dust);font-size:30px}
+.marq{overflow:hidden;margin-top:48px;border-block:1px solid var(--line);padding:20px 0}
+.mt{display:flex;gap:20px;width:max-content;animation:mq 50s linear infinite}
+.marq:hover .mt{animation-play-state:paused}
+.mt .ph{width:300px;flex:none;border:1px solid var(--line)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.team a{position:relative;overflow:hidden}
+.team a::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--dust);transition:width .5s}
+.team a:hover::after{width:100%}
+@media(max-width:860px){.stats{grid-template-columns:1fr 1fr}.rv-rover{width:100px}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.rv-rover,.wh,.mt{animation:none}.ch{animation:none!important}}
+footer{border-top:1px solid var(--line);padding:56px 32px calc(40px + env(safe-area-inset-bottom,0px));max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;font-size:15px}
+footer h3{font-size:18px;letter-spacing:.12em;margin-bottom:12px}
+footer p{font-size:14px;color:var(--dim)}
+.copy{grid-column:1/-1;font-size:13px;color:var(--dim)}
+@media(max-width:860px){nav ul{display:none}.g4,.g3,.g2,footer{grid-template-columns:1fr 1fr}.g-gal{grid-template-columns:1fr 1fr}section{padding:84px 20px}nav{padding-left:20px;padding-right:20px}}
+@media(max-width:520px){.g4,.g3,.g2,footer{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){#top h1{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}@keyframes rise{from{opacity:0;transform:translateY(24px)}}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<nav id="nav">
+  <a class="brand" href="#top" aria-label="FISAT Rover home">ROVER</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="https://fisatrover.in/irc">IRC 2026</a></li>
+    <li><a href="https://fisatrover.in/team">Team</a></li>
+    <li><a href="#sponsors">Sponsors</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="top" class="band">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <svg class="ground" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 C200 70 330 140 560 100 S900 40 1120 90 1340 70 1440 100 V200 H0Z" fill="#1c0d07"/><path d="M0 160 C240 120 420 180 700 140 S1100 110 1440 150 V200 H0Z" fill="#000"/></svg>
+  <svg class="rv-rover" viewBox="0 0 150 80" aria-hidden="true"><g fill="#e9d9cf"><rect x="30" y="28" width="70" height="20" rx="3"/><rect x="62" y="12" width="6" height="16"/><circle cx="65" cy="10" r="5"/><path d="M100 34 L128 18 L140 24" stroke="#e9d9cf" stroke-width="4" fill="none"/></g><rect x="38" y="31" width="30" height="8" fill="#c8643c"/><g stroke="#e9d9cf" stroke-width="3" fill="#111"><path d="M30 46 L22 62 M65 48 L65 62 M100 46 L108 62" fill="none"/><g class="wh"><circle cx="20" cy="66" r="11"/><path d="M20 56V76M10 66H30"/></g><g class="wh"><circle cx="65" cy="66" r="11"/><path d="M65 56V76M55 66H75"/></g><g class="wh"><circle cx="110" cy="66" r="11"/><path d="M110 56V76M100 66H120"/></g></g></svg>
+  <span class="sub">Build for beyond</span>
+  <h1 id="h1">FISAT Rover Team</h1>
+  <div><a class="btn" href="#about">Scroll down</a>&nbsp; <a class="btn" href="https://www.instagram.com/fisatroverteam?igsh=MXcyYTNpZzNubWh0Mw%3D%3D">Instagram</a></div>
+</section>
+
+<section id="about">
+  <h2>About us</h2>
+  <p style="margin-top:32px">DAWN is an advanced Mars rover prototype engineered by the FISAT Rover Team, a passionate collective of engineering students from the Federal Institute of Science and Technology (FISAT), Angamaly, Kerala. United by a strong enthusiasm for robotics and space technology, the team designs and builds innovative planetary exploration systems while proudly representing India at the International Rover Challenge, a premier global competition.</p>
+  <div class="grid g2"><div class="ph" style="aspect-ratio:16/10"><span>DAWN rover</span></div>
+  <div style="display:flex;flex-direction:column;justify-content:center;gap:20px"><h2>Built differently</h2>
+  <p>Engineered to operate in Mars-analogue environments, DAWN features an advanced suspension system, a multi-degree-of-freedom robotic arm for precise manipulation, and robust autonomous navigation. Built through strong interdisciplinary collaboration in mechanical, electronics, and software engineering, DAWN is designed to complete complex scientific and maintenance tasks, showcasing innovation and technical excellence.</p></div></div>
+</section>
+
+<section class="rule" id="teams">
+  <h2>Our teams</h2>
+  <div class="grid g4 team">
+    <a href="https://fisatrover.in/team"><h3>AI and Autonomy</h3><span class="more">Learn more</span></a>
+    <a href="https://fisatrover.in/team"><h3>Electrical</h3><span class="more">Learn more</span></a>
+    <a href="https://fisatrover.in/team"><h3>Mechanical</h3><span class="more">Learn more</span></a>
+    <a href="https://fisatrover.in/team"><h3>Control</h3><span class="more">Learn more</span></a>
+  </div>
+</section>
+
+<section class="rule" id="sponsors">
+  <h2>Sponsors</h2>
+  <p class="tier">Platinum sponsors</p>
+  <div class="grid g2 sp">
+    <a href="https://generaldatum.com"><h3>General Datum</h3><p>Full-stack Engineering, Product Design &amp; Development company dealing with Defence, Aerospace &amp; Data center.</p></a>
+    <a href="https://mrad.co.in/"><h3>MRD Enterprises</h3><p>Industry-grade support for performance-driven projects.</p></a>
+  </div>
+  <p class="tier">Gold sponsors</p>
+  <div class="grid g2 sp"><a href="https://senseselec.com"><h3>Senses</h3><p>Smart technology and reliable engineering tools.</p></a></div>
+  <p class="tier">Regular sponsors</p>
+  <div class="grid g2 sp"><a href="https://fisat.ac.in"><h3>FISAT</h3><p>Supporting innovation and academic excellence in engineering.</p></a></div>
+
+  <h2 style="margin-top:96px">Why sponsor us?</h2>
+  <div class="grid g3 why">
+    <div><h3>NASA-grade visibility</h3><p>Reach a global community of roboticists and industry leaders from organizations like ISRO and The Mars Society.</p></div>
+    <div><h3>Regional prestige</h3><p>Align your brand with the elite technical talent putting Kerala on the global space-tech map.</p></div>
+    <div><h3>Top-tier achievement</h3><p>We are one of only three teams from Kerala to qualify for the International Rover Challenge (IRC) 2026 Finals.</p></div>
+    <div><h3>Global standard</h3><p>Our design cleared the System Design and Development Review (SDDR), proving it meets international aerospace engineering standards.</p></div>
+    <div><h3>The “Big Three”</h3><p>The IRC is a premier qualifying event for the World Rover League, standing alongside major competitions in the USA and Poland.</p></div>
+  </div>
+</section>
+
+<section class="rule" id="achievements">
+  <h2>Achievements</h2>
+  <p style="margin-top:24px">What FISAT Robotics Factory have done.</p>
+  <div class="grid g2 team">
+    <a href="https://fisatrover.in/pages/events/minihack/"><h3>Surveillance Robocat</h3><span class="more">EIE Dept</span></a>
+    <a href="https://fisatrover.in/pages/events/technology-trends/"><h3>Brain Controlled Assistive System</h3><span class="more">EIE Dept</span></a>
+  </div>
+  <h3 class="tier2">Jan – Jun 2026 highlights</h3><div class="ctl"><button id="pv" aria-label="Previous">&larr;</button><button id="nx" aria-label="Next">&rarr;</button></div>
+  <div class="car" id="car"><div class="ar"><b>Finalist</b><div><h3>International Rover Challenge 2026</h3><small>MIT Manipal, Udupi · 28 Jan – 2 Feb 2026 · International</small></div><p>36 students from S4 and S6 EIE</p></div><div class="ar"><b>Pre-finalist</b><div><h3>Airbus Fly Your Ideas</h3><small>One of 66 teams chosen from 350+ worldwide · International</small></div><p>Karthik P K, Amal Anil, Ishan Manu, Gautham</p></div><div class="ar"><b>Finalist</b><div><h3>Smart Earth Hackathon, Kazakhstan</h3><small>International</small></div><p>Salvion Thomas, Farzeen Fathima, Adhithyan K, Manal Nivil</p></div><div class="ar"><b>1st place</b><div><h3>I-Act Udupi · AI Metro Ticketing</h3><small>17 Mar 2026 · National</small></div><p>Salvion Thomas, Agnes Joela Sam</p></div><div class="ar"><b>1st place</b><div><h3>I-Act Udupi · Design</h3><small>17 Mar 2026 · National</small></div><p>Emil K Manoj</p></div><div class="ar"><b>1st place</b><div><h3>KAU Youth Hackathon</h3><small>Kerala Agricultural University, Mannuthy · 14 Feb 2026 · State</small></div><p>Salvion Thomas, Nivin Prakash, Farzeen Fathima</p></div><div class="ar"><b>2nd place</b><div><h3>AgriHack National Agricultural Hackathon</h3><small>Jain University, Bangalore · 4 Apr 2026 · National</small></div><p>A P Nimil Nazeer, A B Navanika, Darwin T Jose, Muhammed Hisham T</p></div><div class="ar"><b>2nd place</b><div><h3>I-Act Udupi · Idea Pitching</h3><small>17 Mar 2026 · National</small></div><p>Salvion Thomas</p></div><div class="ar"><b>Runner-up</b><div><h3>I-Act Udupi · Idea Pitching</h3><small>17 Mar 2026 · National</small></div><p>Shinto S Pomson</p></div><div class="ar"><b>Runner-up</b><div><h3>I-Act Udupi · Speed CAD</h3><small>17 Mar 2026 · National</small></div><p>Karthik P K</p></div><div class="ar"><b>4th place, special mention</b><div><h3>PSG B-Summit</h3><small>National</small></div><p>Salvion Thomas, Agnes Joela Sam, Manal Nivil Ali</p></div><div class="ar"><b>2nd place</b><div><h3>Navodaya Idea Pitch</h3><small>Chinmaya Vishwavidyapeeth · 19 Feb 2026</small></div><p>Adithyan, Manal</p></div><div class="ar"><b>2nd prize</b><div><h3>Line Following Robot</h3><small>Viswa Jyothi</small></div><p>Ibrahim K, Amaan Shakeer, Amir Shihab, Aneena Manohar, Nourin Shanavas, Izza</p></div><div class="ar"><b>3rd prize</b><div><h3>Line Following Robot</h3><small>MBITS</small></div><p>Ibrahim K, Amaan Shakeer, Amir Shihab, Aneena Manohar, Nourin Shanavas, Izza</p></div><div class="ar"><b>3rd place</b><div><h3>Line Following Robot</h3><small>Rajagiri School of Engineering and Technology · 14 Oct 2025</small></div><p>A B Navanika, Farzeen Fathima N, Ashkal Ahammed, Ameen Ahammed</p></div><div class="ar"><b>Finalist</b><div><h3>Ideathon</h3><small>St Teresa's College</small></div><p>A B Navanika, Ann Maria Benny</p></div></div>
+  <h3 class="tier2">Participation</h3><div class="alist"><div class="ar pr"><b></b><div><h3>ISTE Paper Presentation · 16–17 Apr 2026</h3></div><p>10 papers presented at a national conference by ISTE</p></div><div class="ar pr"><b></b><div><h3>Mini Project Expo, FISAT · 25 Mar 2026</h3></div><p>50+ students from S6 EIE</p></div><div class="ar pr"><b></b><div><h3>I-Act’26, MIT Manipal · 16–17 Mar 2026</h3></div><p>Idea pitching and events</p></div><div class="ar pr"><b></b><div><h3>I-Act Udupi, Bangalore and Metro Ticketing events</h3></div><p>Salvion Thomas, Parthip Aji, Shinto S Pomson, Karthik M D and others</p></div><div class="ar pr"><b></b><div><h3>I-Act’25, REVA University, Bangalore · 15–16 Mar 2025</h3></div><p>Dulfukker Ali, Hareesh S Nair, Karthik M D, Fahad Yasin, Emil Manoj</p></div><div class="ar pr"><b></b><div><h3>Jabagadadash 6.0, Chinmaya Vishwavidyapeeth · 19–21 Feb 2026</h3></div><p>International inter-university fest</p></div><div class="ar pr"><b></b><div><h3>Vajra Hackathon, MA College Kothamangalam · 21 Feb 2026</h3></div><p>National level</p></div><div class="ar pr"><b></b><div><h3>Codex Hackathon by ISTE · Feb 2026</h3></div><p>Saniya Thankachan</p></div><div class="ar pr"><b></b><div><h3>ASME EFx26 IAM3D and ASME IAM 3D Model, SJCET Palai · 27–28 Feb 2026</h3></div><p>National level</p></div><div class="ar pr"><b></b><div><h3>Pradharshani project expo · 19–21 Feb 2026</h3></div><p>Hazim Karat, Hareesh S Nair</p></div><div class="ar pr"><b></b><div><h3>Srishti’26, Saintgits, Kottayam · 23–24 Feb 2026</h3></div><p>Dulfukker Ali, Anirudh M, Fahad Yasin</p></div><div class="ar pr"><b></b><div><h3>Line following robot events, Viswa Jyothi and Ekalakshya (Chinmaya)</h3></div><p>Participation by S4 students</p></div></div>
+  </section>
+
+<section class="rule band" style="min-height:70vh;align-items:flex-start">
+  <h2>Our team</h2>
+  <p>Many hands, one vision — brought to life through teamwork.</p>
+  <a class="btn" href="https://fisatrover.in/team">Meet our team</a>
+</section>
+
+<section id="gallery" class="rule">
+  <h2>Gallery</h2>
+  <div class="marq"><div class="mt">
+    <div class="ph"><span>Trending 1</span></div><div class="ph"><span>Trending 2</span></div>
+    <div class="ph"><span>Trending 3</span></div><div class="ph"><span>Trending 4</span></div>
+    <div class="ph"><span>Trending 5</span></div><div class="ph"><span>Trending 6</span></div>
+    <div class="ph"><span>Trending 7</span></div>
+  
+    <div class="ph"><span>Trending 1</span></div><div class="ph"><span>Trending 2</span></div>
+    <div class="ph"><span>Trending 3</span></div><div class="ph"><span>Trending 4</span></div>
+    <div class="ph"><span>Trending 5</span></div><div class="ph"><span>Trending 6</span></div>
+    <div class="ph"><span>Trending 7</span></div>
+  </div></div>
+</section>
+
+<footer id="contact">
+  <div><h3>Where to find us</h3><p>Federal Institute of Science and Technology,<br>Hormis Nagar, Mookanoor.,<br>Ernakulam - 683 577.</p></div>
+  <div><h3>Contact us</h3><p><a href="mailto:fisatroverteam@gmail.com">fisatroverteam@gmail.com</a><br><a href="https://www.instagram.com/fisatroverteam?igsh=MXcyYTNpZzNubWh0Mw%3D%3D">Instagram</a></p></div>
+  <div><h3>Admin</h3><p><a href="https://fisatrover.in/">Admin login</a></p></div>
+  <p class="copy">© Copyright. Made and maintained by FISAT Rover Website Team. <a href="#top">Back to top</a></p>
+</footer>
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var h=document.getElementById('h1'),t=h.textContent;h.setAttribute('aria-label',t);h.textContent='';
+t.split('').forEach(function(c,i){var e=document.createElement('span');e.className='ch';e.setAttribute('aria-hidden','true');e.textContent=c===' '?'\u00a0':c;
+if(!rm){e.style.cssText='animation:rise .9s cubic-bezier(.2,.7,.2,1) '+(i*.045+.2)+'s both'}h.appendChild(e)});
+var pr=document.getElementById('prog'),nav=document.getElementById('nav'),cv=document.getElementById('stars'),cx=cv.getContext('2d'),st=[],sy=0;
+function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;st=[];for(var i=0;i<140;i++)st.push({x:Math.random()*cv.width,y:Math.random()*cv.height*.8,r:Math.random()*1.4+.2,p:Math.random()*6,d:Math.random()*.6+.2})}
+function dr(n){cx.clearRect(0,0,cv.width,cv.height);st.forEach(function(s){var a=rm?.7:.4+.6*Math.abs(Math.sin(n/1000*s.d+s.p));cx.fillStyle='rgba(255,255,255,'+a+')';cx.beginPath();cx.arc(s.x,(s.y-sy*s.d*.3+cv.height)%cv.height,s.r,0,6.3);cx.fill()});if(!rm)requestAnimationFrame(dr)}
+rs();addEventListener('resize',rs);requestAnimationFrame(dr);
+addEventListener('scroll',function(){sy=scrollY;var d=document.documentElement;pr.style.width=(scrollY/(d.scrollHeight-innerHeight)*100)+'%';nav.classList.toggle('sc',scrollY>60);
+},{passive:true});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);e.target.querySelectorAll('[data-n]').forEach(cnt)}})},{threshold:.15});
+document.querySelectorAll('section:not(#top)>*,.stats,.grid>*').forEach(function(e){e.classList.add('rv');io.observe(e)});
+function cnt(b){var n=+b.dataset.n,sf=b.dataset.s||'',t0=null;if(rm){b.textContent=n+sf;return}
+(function f(ts){t0=t0||ts;var k=Math.min((ts-t0)/1600,1);b.textContent=Math.round(n*(1-Math.pow(1-k,3)))+sf;if(k<1)requestAnimationFrame(f)})(performance.now())}
+var car=document.getElementById('car'),step=function(){return car.firstElementChild.offsetWidth+20};
+document.getElementById('nx').onclick=function(){car.scrollBy({left:step(),behavior:'smooth'})};
+document.getElementById('pv').onclick=function(){car.scrollBy({left:-step(),behavior:'smooth'})};
+var dn=false,x0=0,s0=0;car.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;dn=true;x0=e.clientX;s0=car.scrollLeft;car.classList.add('drag')});
+addEventListener('pointermove',function(e){if(dn)car.scrollLeft=s0-(e.clientX-x0)});
+addEventListener('pointerup',function(){dn=false;car.classList.remove('drag')});
+})();
+</script>
+</body>
+</html>
